@@ -1,0 +1,23 @@
+<app-exibition-item  
+    [showEditButton]="!edit" 
+    [exibition]="exibition" 
+    (editClicked)="onEditClicked()"
+    ></app-exibition-item>
+
+<div class="row" *ngIf="!edit">
+    <div class="col-6" *ngFor="let art of artworks">
+        <app-artwork-item [artwork]="art"></app-artwork-item>
+    </div>
+</div>
+
+<div class="row" *ngIf="edit">
+    <div class="col">
+        <app-exibition-edit 
+        [freeArtworks]="freeArtworks" 
+        [exibitionId]="exibitionId" 
+        [exibitionArtworks]="artworks" 
+        (doneClicked)="onDoneClicked()" 
+        (artworksChanged)="onArtworksChanged()"
+        (search)="onSearch($event)"></app-exibition-edit>
+    </div>
+</div>

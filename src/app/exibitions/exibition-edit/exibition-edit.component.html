@@ -1,0 +1,62 @@
+<div class="row mt-3">
+    <div class="col-6">
+        
+    <div class="row">
+      <div class="col-5">
+          <input
+            type="text"
+            class="form-control"
+            id="searchInput"
+            placeholder="Author"
+            [formControl]="authorControl"
+          />
+      </div>
+      <div class="col-1">
+        <button class="btn btn-dark" (click)="onSearchClick()">Search</button>
+      </div>
+    </div>
+    </div>
+    <div class="col-6">
+        <button class="btn btn-dark float-end" (click)="onDoneClicked()">Done</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-6">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let art of freeArtworks">
+                <td>{{art.title}}</td>
+                <td>{{art.author}}</td>
+                <td><button class="btn btn-dark" (click)="onAddClicked(art)">Add</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div class="col-6">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let art of exibitionArtworks">
+                <td>{{art.title}}</td>
+                <td>{{art.author}}</td>
+                <td><button class="btn btn-dark" (click)="onRemoveClicked(art._id)">Remove</button></td>
+              </tr>
+            </tbody>
+          </table>
+        
+    </div>
+</div>

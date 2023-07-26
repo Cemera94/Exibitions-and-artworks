@@ -1,0 +1,25 @@
+<div class="artwork-container">
+    <div class="row">
+      <div class="col">
+        <img
+          src="http://localhost:3000/image/{{ artwork.imageId }}.jpg"
+          width="100%"
+        />
+      </div>
+    </div>
+  
+    <div class="row ms-2 mt-2">
+      <div class="col">
+        <h4>{{ artwork.title }}</h4>
+        <h5>
+          {{ artwork.author }} - {{ artwork.beginYear }}-{{ artwork.endYear }}
+        </h5>
+        <p>{{ artwork.medium }}</p>
+        <p>{{ artwork.dimensions }}</p>
+        <p>
+          <small>{{ artwork.description }}</small>
+        </p>
+      </div>
+    </div>
+  </div>
+  
